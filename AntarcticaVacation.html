@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<h1>Antarctica Dream Vacation</h1>
+<center>
+<h2><font size="4">Antarctica Road Map</font><h2>
+<body bgcolor="#00CED1">
+<div id="map" style="width:50%;height:350px"></div>
+<div id="satellite" style="width:50%;height:350px"></div>
+
+<script>
+function myMap() {
+  var myCenter = new google.maps.LatLng(-81.376126, -9.843750);
+
+  var mapCanvas = document.getElementById("map");
+
+  var mapOptions = {
+     center: myCenter,
+     zoom: 2
+  };
+
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+
+  var marker = new google.maps.Marker({position:myCenter});
+
+  marker.setMap(map);
+
+
+
+  var satelliteCenter = new google.maps.LatLng(-81.376126, -9.843750);
+
+  var satelliteCanvas = document.getElementById("satellite");
+
+  var satelliteOptions = {
+    center: myCenter,
+    zoom:1,
+    mapTypeId: 'satellite'
+  };
+  var satellite = new google.maps.Map(satelliteCanvas, satelliteOptions);
+
+  var satelliteMarker = new google.maps.Marker({position:satelliteCenter});
+
+  satelliteMarker.setMap(satellite);
+
+  var origin = new google.maps.LatLng(-66.830843, -60.820313);
+  var penguins = new google.maps.Marker({position:origin});
+  penguins.setMap(satellite);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+<p> The top map displays in road map view where antarctica is.</p><p> The second map shows in satellite view and shows where penguins are located on the left most point.</p>
+<img src="Penguins.jpg" alt="Penguins" Style="width:1024px;height:640px;">
+<p> Antarctica is a place in the southern hemisphere and is home to many animals although it may not look like it. There are animals such as penguins, polar bears, whales, foxes, etc. The iceburgs in antarctica hold lots of life and could be a great place to put a hotel. This is where I would like to stay for my "Dream Vacation".</p>
+</body>
+</center>
+</html>
